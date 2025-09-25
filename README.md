@@ -1,4 +1,3 @@
-markdown
 # Real-Time Market Sentiment Analyzer
 
 A LangChain-powered pipeline that analyzes market sentiment for companies by fetching recent news and processing it through Azure OpenAI GPT-4o.
