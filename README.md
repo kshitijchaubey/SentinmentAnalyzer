@@ -14,7 +14,7 @@ A LangChain-powered pipeline that analyzes market sentiment for companies by fet
 ## Setup
 
 1. **Install dependencies:**
-<pre> ```bash pip install -r requirements.txt ``` </pre>
+```bash pip install -r requirements.txt
 
 2.	**Environment Variables:**
 Create a .env file with your credentials:
