@@ -1,24 +1,30 @@
+Here’s a properly formatted version:
+
 # Real-Time Market Sentiment Analyzer
 
-A LangChain-powered pipeline that analyzes market sentiment for companies by fetching recent news and processing it through Azure OpenAI GPT-4o.
+A LangChain-powered pipeline that analyzes market sentiment for companies by fetching recent news and processing it through **Azure OpenAI GPT-4o**.
 
-## Features
+---
 
-- Company name to stock symbol conversion
-- Real-time news fetching from multiple sources
-- Sentiment analysis using Azure OpenAI GPT-4o
-- Structured JSON output with comprehensive analysis
-- MLflow integration for tracing and monitoring
+## 🚀 Features
+- Company name to stock symbol conversion  
+- Real-time news fetching from multiple sources  
+- Sentiment analysis using Azure OpenAI GPT-4o  
+- Structured JSON output with comprehensive analysis  
+- MLflow integration for tracing and monitoring  
 
-## Setup
+---
 
-1. **Install dependencies:**
+## ⚙️ Setup
+
+### 1. Install dependencies
 ```bash
 pip install -r requirements.txt
 
-2.	**Environment Variables:**
+2. Environment Variables
+
 Create a .env file with your credentials:
-env
+
 # Azure OpenAI
 AZURE_OPENAI_API_KEY=your_azure_openai_api_key
 AZURE_OPENAI_ENDPOINT=your_azure_openai_endpoint
@@ -32,11 +38,10 @@ MLFLOW_EXPERIMENT_NAME=market-sentiment-analysis
 # Brave Search (optional)
 BRAVE_API_KEY=your_brave_api_key
 
-3.	**Run MLflow UI (optional):**
-bash
+3. Run MLflow UI (optional)
 mlflow ui
-Usage
-python
+
+📖 Usage
 from sentiment_analyzer import MarketSentimentAnalyzer
 
 # Initialize analyzer
@@ -46,8 +51,7 @@ analyzer = MarketSentimentAnalyzer()
 result = analyzer.analyze_sentiment("Microsoft")
 print(result)
 
-Sample Output
-json
+📝 Sample Output
 {
   "company_name": "Microsoft Corporation",
   "stock_code": "MSFT",
@@ -60,20 +64,28 @@ json
   "market_implications": "Positive earnings may lead to stock price increase and investor confidence",
   "confidence_score": 0.85
 }
-Configuration
-•	LLM Model: Configured to use Azure OpenAI GPT-4o
-•	News Sources: Brave Search (primary), Yahoo Finance (fallback)
-•	Output Format: Structured JSON with Pydantic validation
-•	Monitoring: MLflow for tracing and prompt debugging
-Bonus Features
-•	Multiple news source fallbacks
-•	Comprehensive error handling
-•	MLflow integration for observability
-•	Configurable through environment variables
-text
 
-## 5. .env.example
-```env
+⚙️ Configuration
+
+LLM Model: Configured to use Azure OpenAI GPT-4o
+
+News Sources: Brave Search (primary), Yahoo Finance (fallback)
+
+Output Format: Structured JSON with Pydantic validation
+
+Monitoring: MLflow for tracing and prompt debugging
+
+✨ Bonus Features
+
+Multiple news source fallbacks
+
+Comprehensive error handling
+
+MLflow integration for observability
+
+Configurable through environment variables
+
+📂 .env.example
 # Azure OpenAI Configuration
 AZURE_OPENAI_API_KEY=your_azure_openai_api_key_here
 AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com/
@@ -86,18 +98,38 @@ MLFLOW_EXPERIMENT_NAME=market-sentiment-analysis
 
 # Brave Search API (optional)
 BRAVE_API_KEY=your_brave_api_key_here
-Key Features Implemented:
-1.	Input Handling: Accepts company names and converts to stock symbols
-2.	Stock Symbol Extraction: Uses static mapping + Yahoo Finance fallback
-3.	News Fetching: Integrates Brave Search and Yahoo Finance
-4.	Sentiment Analysis: Uses Azure OpenAI with structured output parsing
-5.	MLflow Integration: Comprehensive tracing and monitoring
-6.	Error Handling: Robust fallback mechanisms
-7.	Structured Output: Pydantic models for consistent JSON formatting
-To Run:
-1.	Install dependencies: pip install -r requirements.txt
-2.	Set up your .env file with Azure OpenAI credentials
-3.	Run: python sentiment_analyzer.py
+
+🔑 Key Features Implemented
+
+Input Handling: Accepts company names and converts to stock symbols
+
+Stock Symbol Extraction: Uses static mapping + Yahoo Finance fallback
+
+News Fetching: Integrates Brave Search and Yahoo Finance
+
+Sentiment Analysis: Uses Azure OpenAI with structured output parsing
+
+MLflow Integration: Comprehensive tracing and monitoring
+
+Error Handling: Robust fallback mechanisms
+
+Structured Output: Pydantic models for consistent JSON formatting
+
+▶️ To Run
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+
+Set up your .env file with Azure OpenAI credentials
+
+Run:
+
+python sentiment_analyzer.py
+
+
 The system will analyze Microsoft as a test case and provide structured sentiment analysis with MLflow tracing enabled.
 
 
+---
