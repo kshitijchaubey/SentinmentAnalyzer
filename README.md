@@ -1,5 +1,3 @@
-Here’s a properly formatted version:
-
 # Real-Time Market Sentiment Analyzer
 
 A LangChain-powered pipeline that analyzes market sentiment for companies by fetching recent news and processing it through **Azure OpenAI GPT-4o**.
@@ -130,6 +128,3 @@ python sentiment_analyzer.py
 
 
 The system will analyze Microsoft as a test case and provide structured sentiment analysis with MLflow tracing enabled.
-
-
----
