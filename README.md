@@ -5,6 +5,7 @@ A LangChain-powered pipeline that analyzes market sentiment for companies by fet
 ---
 
 ## 🚀 Features
+
 - Company name to stock symbol conversion  
 - Real-time news fetching from multiple sources  
 - Sentiment analysis using Azure OpenAI GPT-4o  
@@ -16,13 +17,16 @@ A LangChain-powered pipeline that analyzes market sentiment for companies by fet
 ## ⚙️ Setup
 
 ### 1. Install dependencies
+
 ```bash
 pip install -r requirements.txt
+```
 
-2. Environment Variables
+### 2. Environment Variables
 
-Create a .env file with your credentials:
+Create a `.env` file with your credentials:
 
+```dotenv
 # Azure OpenAI
 AZURE_OPENAI_API_KEY=your_azure_openai_api_key
 AZURE_OPENAI_ENDPOINT=your_azure_openai_endpoint
@@ -35,11 +39,19 @@ MLFLOW_EXPERIMENT_NAME=market-sentiment-analysis
 
 # Brave Search (optional)
 BRAVE_API_KEY=your_brave_api_key
+```
 
-3. Run MLflow UI (optional)
+### 3. Run MLflow UI (optional)
+
+```bash
 mlflow ui
+```
 
-📖 Usage
+---
+
+## 📖 Usage
+
+```python
 from sentiment_analyzer import MarketSentimentAnalyzer
 
 # Initialize analyzer
@@ -48,8 +60,13 @@ analyzer = MarketSentimentAnalyzer()
 # Analyze sentiment for a company
 result = analyzer.analyze_sentiment("Microsoft")
 print(result)
+```
 
-📝 Sample Output
+---
+
+## 📝 Sample Output
+
+```json
 {
   "company_name": "Microsoft Corporation",
   "stock_code": "MSFT",
@@ -62,28 +79,31 @@ print(result)
   "market_implications": "Positive earnings may lead to stock price increase and investor confidence",
   "confidence_score": 0.85
 }
+```
 
-⚙️ Configuration
+---
 
-LLM Model: Configured to use Azure OpenAI GPT-4o
+## ⚙️ Configuration
 
-News Sources: Brave Search (primary), Yahoo Finance (fallback)
+- **LLM Model:** Configured to use Azure OpenAI GPT-4o
+- **News Sources:** Brave Search (primary), Yahoo Finance (fallback)
+- **Output Format:** Structured JSON with Pydantic validation
+- **Monitoring:** MLflow for tracing and prompt debugging
 
-Output Format: Structured JSON with Pydantic validation
+---
 
-Monitoring: MLflow for tracing and prompt debugging
+## ✨ Bonus Features
 
-✨ Bonus Features
+- Multiple news source fallbacks
+- Comprehensive error handling
+- MLflow integration for observability
+- Configurable through environment variables
 
-Multiple news source fallbacks
+---
 
-Comprehensive error handling
+## 📂 .env.example
 
-MLflow integration for observability
-
-Configurable through environment variables
-
-📂 .env.example
+```dotenv
 # Azure OpenAI Configuration
 AZURE_OPENAI_API_KEY=your_azure_openai_api_key_here
 AZURE_OPENAI_ENDPOINT=https://your-resource.openai.azure.com/
@@ -96,35 +116,36 @@ MLFLOW_EXPERIMENT_NAME=market-sentiment-analysis
 
 # Brave Search API (optional)
 BRAVE_API_KEY=your_brave_api_key_here
+```
 
-🔑 Key Features Implemented
+---
 
-Input Handling: Accepts company names and converts to stock symbols
+## 🔑 Key Features Implemented
 
-Stock Symbol Extraction: Uses static mapping + Yahoo Finance fallback
+- Input Handling: Accepts company names and converts to stock symbols
+- Stock Symbol Extraction: Uses static mapping + Yahoo Finance fallback
+- News Fetching: Integrates Brave Search and Yahoo Finance
+- Sentiment Analysis: Uses Azure OpenAI with structured output parsing
+- MLflow Integration: Comprehensive tracing and monitoring
+- Error Handling: Robust fallback mechanisms
+- Structured Output: Pydantic models for consistent JSON formatting
 
-News Fetching: Integrates Brave Search and Yahoo Finance
+---
 
-Sentiment Analysis: Uses Azure OpenAI with structured output parsing
-
-MLflow Integration: Comprehensive tracing and monitoring
-
-Error Handling: Robust fallback mechanisms
-
-Structured Output: Pydantic models for consistent JSON formatting
-
-▶️ To Run
+## ▶️ To Run
 
 Install dependencies:
 
+```bash
 pip install -r requirements.txt
+```
 
-
-Set up your .env file with Azure OpenAI credentials
+Set up your `.env` file with Azure OpenAI credentials.
 
 Run:
 
+```bash
 python sentiment_analyzer.py
-
+```
 
 The system will analyze Microsoft as a test case and provide structured sentiment analysis with MLflow tracing enabled.
